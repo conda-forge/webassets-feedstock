@@ -11,6 +11,18 @@ Summary: Media asset management for Python, with glue code for various web frame
 
 
 
+Current build status
+====================
+
+Linux: [![Circle CI](https://circleci.com/gh/conda-forge/webassets-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/webassets-feedstock)
+OSX: [![TravisCI](https://travis-ci.org/conda-forge/webassets-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/webassets-feedstock)
+Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/webassets-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/webassets-feedstock/branch/master)
+
+Current release info
+====================
+Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/webassets/badges/version.svg)](https://anaconda.org/conda-forge/webassets)
+Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/webassets/badges/downloads.svg)](https://anaconda.org/conda-forge/webassets)
+
 Installing webassets
 ====================
 
@@ -31,7 +43,6 @@ It is possible to list all of the versions of `webassets` available on your plat
 ```
 conda search webassets --channel conda-forge
 ```
-
 
 
 About conda-forge
@@ -67,18 +78,6 @@ Terminology
 
 **conda-forge** - the place where the feedstock and smithy live and work to
                   produce the finished article (built conda distributions)
-
-Current build status
-====================
-
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/webassets-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/webassets-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/webassets-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/webassets-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/webassets-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/webassets-feedstock/branch/master)
-
-Current release info
-====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/webassets/badges/version.svg)](https://anaconda.org/conda-forge/webassets)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/webassets/badges/downloads.svg)](https://anaconda.org/conda-forge/webassets)
 
 
 Updating webassets-feedstock
