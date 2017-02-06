@@ -1,8 +1,8 @@
 {%set name = "webassets" %}
-{%set version = "0.12.0" %}
+{%set version = "0.12.1" %}
 {%set compress_type = "tar.gz" %}
 {%set hash_type = "sha256" %}
-{%set hash_val = "99d10b11f342cf2692ad3451f121c5302acee8144df32005c6f1305d541fa192" %}
+{%set hash_val = "e7d9c8887343123fd5b32309b33167428cb1318cdda97ece12d0907fd69d38db" %}
 {%set build_num = "0" %}
 
 package:
