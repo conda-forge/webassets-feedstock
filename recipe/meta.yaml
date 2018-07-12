@@ -1,9 +1,8 @@
-{%set name = "webassets" %}
-{%set version = "0.12.1" %}
-{%set compress_type = "tar.gz" %}
-{%set hash_type = "sha256" %}
-{%set hash_val = "e7d9c8887343123fd5b32309b33167428cb1318cdda97ece12d0907fd69d38db" %}
-{%set build_num = "0" %}
+{% set name = "webassets" %}
+{% set version = "0.12.1" %}
+{% set compress_type = "tar.gz" %}
+{% set hash_type = "sha256" %}
+{% set hash_val = "e7d9c8887343123fd5b32309b33167428cb1318cdda97ece12d0907fd69d38db" %}
 
 package:
   name: {{ name|lower }}
@@ -11,19 +10,20 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}.{{ compress_type }}
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ compress_type }}
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ compress_type }}
   {{ hash_type }}: {{ hash_val }}
 
 build:
+  noarch: python
   entry_points:
     - nwebassets = webassets.script:run
-  number: {{ build_num }}
-  script: python setup.py install --single-version-externally-managed --record=record.txt
+  number: 1
+  script: python -m pip install --no-deps --ignore-installed .
 
 requirements:
-  build:
+  host:
     - python
-    - setuptools
+    - pip
 
   run:
     - python
