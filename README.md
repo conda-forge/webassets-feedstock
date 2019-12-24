@@ -3,7 +3,7 @@ About webassets
 
 Home: https://github.com/miracle2k/webassets/
 
-Package license: BSD 2-Clause
+Package license: BSD-2-Clause
 
 Feedstock license: BSD 3-Clause
 
