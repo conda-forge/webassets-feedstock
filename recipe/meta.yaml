@@ -1,26 +1,28 @@
+{% set name = "webassets" %}
 {% set version = "2.0" %}
 
 package:
-  name: webassets
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/w/webassets/webassets-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/webassets-{{ version }}.tar.gz
   sha256: 167132337677c8cedc9705090f6d48da3fb262c8e0b2773b29f3352f050181cd
 
 build:
-  noarch: python
-  number: 0
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
   entry_points:
-    - nwebassets = webassets.script:run
+    - webassets = webassets.script:run
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 1
 
 requirements:
   host:
-    - python
+    - python >=3.8
+    - sphinx
     - pip
   run:
-    - python
+    - python >=3.8
 
 test:
   imports:
@@ -31,7 +33,10 @@ test:
     - webassets.filter.jspacker
     - webassets.filter.rjsmin
   commands:
+    - pip check
     - webassets --help
+  requires:
+    - pip
 
 about:
   home: https://github.com/miracle2k/webassets/
@@ -44,4 +49,5 @@ about:
 
 extra:
   recipe-maintainers:
+    - rxm7706
     - pmlandwehr
