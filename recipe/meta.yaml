@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/webassets-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/webassets-{{ version }}.tar.gz
   sha256: 167132337677c8cedc9705090f6d48da3fb262c8e0b2773b29f3352f050181cd
 
 build:
@@ -14,15 +14,15 @@ build:
     - webassets = webassets.script:run
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 2
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - sphinx
     - pip
   run:
-    - python >=3.8
+    - python >={{ python_min }}
 
 test:
   imports:
@@ -37,6 +37,7 @@ test:
     - webassets --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/miracle2k/webassets/
