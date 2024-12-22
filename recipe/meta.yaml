@@ -21,6 +21,7 @@ requirements:
     - python {{ python_min }}
     - sphinx
     - pip
+    - setuptools
   run:
     - python >={{ python_min }}
 
