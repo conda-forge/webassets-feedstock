@@ -1,5 +1,5 @@
 {% set name = "webassets" %}
-{% set version = "2.0" %}
+{% set version = "3.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,14 +7,14 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/webassets-{{ version }}.tar.gz
-  sha256: 167132337677c8cedc9705090f6d48da3fb262c8e0b2773b29f3352f050181cd
+  sha256: 0520e5fd6fbcc012f486fefc61b966474da8fc1b35b0569a9ec2cb0782f1607a
 
 build:
   entry_points:
     - webassets = webassets.script:run
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 2
+  number: 0
 
 requirements:
   host:
@@ -23,7 +23,18 @@ requirements:
     - pip
     - setuptools
   run:
+    - pyyaml >=6.0.2
+    - zope-dottedname >=6.0
     - python >={{ python_min }}
+    # - zope-dottedname >=6.0
+    # - slimit >=0.8.1
+    # - rcssmin >=1.1.2
+    # - pyyaml >=6.0.2
+    # - ply >=3.11
+    # - libsass >=0.23.0
+    # - jinja2 >=3.1.4
+    # - cssutils >=2.11.1
+    # - closure >=20191111
 
 test:
   imports:
